@@ -1,18 +1,19 @@
 import React from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import Comment from "./Comment";
+import {withRouter} from 'react-router-dom'
 
-export default function MyModal(props) {
+function MyModal(props) {
+
+  
   return (
-    <Modal
+    <div
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Reviews
+     
           <Container>
             <Row>
               <Col sm={6}>
@@ -34,15 +35,12 @@ export default function MyModal(props) {
                 </p>
               </Col>
             </Row>
+            <Comment movieid={props.movie} />
           </Container>
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Comment movieid={props.movie} />
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
+     
+      
+     
+    </div>
   );
 }
+export default withRouter (MyModal)

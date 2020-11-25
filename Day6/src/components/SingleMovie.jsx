@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import MyModal from "./MyModal";
-export default class SingleMovie extends Component {
-  state = {
-    modalShow: false,
-  };
+import {withRouter} from 'react-router-dom'
+import ShowDetails from "./ShowDetails";
+
+
+ class SingleMovie extends Component {
+
   render() {
     return (
       <>
@@ -12,19 +14,22 @@ export default class SingleMovie extends Component {
           className="img-fluid"
           alt=""
           style={{ width: "11rem", height: "10rem" }}
-          onClick={() => this.setState({ modalShow: true })}
+          onClick={() => this.props.history.push('/details/'+this.props.obj.imdbID)}
         />
 
-        <MyModal
-          movie={this.props.obj.imdbID}
-          poster={this.props.obj.Poster}
-          moviename={this.props.obj.Title}
-          movieyear={this.props.obj.Year}
-          movietype={this.props.obj.Type}
-          show={this.state.modalShow}
-          onHide={() => this.setState({ modalShow: false })}
+<ShowDetails
+             movie={this.props.obj.imdbID}
+              poster={this.props.obj.Poster}
+             moviename={this.props.obj.Title}
+             movieyear={this.props.obj.Year}
+             movietype={this.props.obj.Type}
+             
+            
+          
         />
       </>
     );
   }
 }
+
+export default withRouter (SingleMovie)

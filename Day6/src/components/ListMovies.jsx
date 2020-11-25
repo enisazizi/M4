@@ -42,6 +42,7 @@ export default class ListMovies extends Component {
     await this.myfetch("harry");
     await this.myfetch("superman");
     await this.myfetch("batman");
+  
   };
   async componentDidUpdate(prevProp) {
     // Typical usage (don't forget to compare props):
@@ -68,7 +69,7 @@ export default class ListMovies extends Component {
                 key={`movieId${movie.imdbID}`}
                 className="mb-5 px-1"
               >
-                <SingleMovie obj={movie}></SingleMovie>
+                <SingleMovie obj={movie} ></SingleMovie>
               </Col>
             ))}
           </Row>
@@ -83,6 +84,7 @@ export default class ListMovies extends Component {
                 className="mb-5 px-1"
               >
                 <SingleMovie obj={movie}></SingleMovie>
+               
               </Col>
             ))}
           </Row>

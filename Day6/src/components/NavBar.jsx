@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import ListMovies from "./ListMovies";
 import { FormControl, InputGroup, Dropdown } from "react-bootstrap";
 import Carousel from "./Carousel";
-export default class NavBar extends Component {
+import { Link, withRouter } from 'react-router-dom'
+ class NavBar extends Component {
   state = {
     query: "",
   };
@@ -34,9 +35,15 @@ export default class NavBar extends Component {
                   </a>
                 </div>
                 <div className="d-flex nav-items">
-                  <a href="#home">Home</a>
-                  <a href="#features">TV Showes</a>
+                  <Link to="/">
+                  <a href="#">Home</a>
+                  </Link>
+                  <Link to="/tvShowes">
+                  <a href="#">TV Showes</a>
+                  </Link>
+                  <Link to="/Movies">
                   <a href="#pricing">Movies</a>
+                  </Link>
                   <a href="#pricing">Recently Added</a>
                   <a href="#pricing">My List</a>
                 </div>
@@ -116,3 +123,4 @@ export default class NavBar extends Component {
     );
   }
 }
+export default withRouter(NavBar)
