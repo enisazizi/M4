@@ -45,7 +45,8 @@ import { Link, withRouter } from 'react-router-dom'
                   <a href="#pricing">Movies</a>
                   </Link>
                   <a href="#pricing">Recently Added</a>
-                  <a href="#pricing">My List</a>
+                  <Link to="/login"><a href="#pricing">My List</a></Link>
+                  
                 </div>
               </div>
               <div className="d-flex right-side">
