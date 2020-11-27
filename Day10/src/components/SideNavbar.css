@@ -1,0 +1,121 @@
+
+.spotify-side-nav{
+    width: 200px;
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    background-color:#040404;
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+}
+
+.spotify-side-nav .nav-title{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: baseline;
+    padding: 20px;
+    color: white;
+    background-color:#040404;
+}
+
+.spotify-side-nav .nav-title h3{
+    margin-left: 2px;
+    font-size: 1.3rem;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 0 30px ;
+}
+
+.spotify-side-nav ol{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color:#040404;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+}
+
+.spotify-side-nav ol li{
+    border-radius: 5px;
+    padding: 4px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    
+}
+
+.spotify-side-nav ol li:hover {
+    border-left: 3px solid #1db954;
+    transition: border-left .1s ease;
+}
+
+
+
+.spotify-side-nav ol li i, ion-icon{
+    font-size: small;
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.spotify-side-nav ol li a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.spotify-side-nav ol li:hover > a, #spotify-side-nav ol li i, ion-icon{
+    color: white;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.user .user-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px white solid;
+}
+
+.user .user-image img{
+    width: 30px;
+    height: 30px;
+}
+
+.user a{
+    font-size: 1rem;
+    color: #ffffff;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.toggler-side-nav{
+    color: white;
+    width: 20px;
+    height: 60px;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #040404;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 3px;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    display: none;
+}

@@ -1,0 +1,10 @@
+nav a {
+    color: thistle;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: rgb(240, 240, 240);
+}

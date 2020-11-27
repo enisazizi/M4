@@ -5,7 +5,7 @@ class Registration extends React.Component {
 
     state = {
         submitstate:false,
-      
+        errorMessage: '',
         formRegister:{
             name:'',
             surname:'',
@@ -15,15 +15,18 @@ class Registration extends React.Component {
             streetAddress:'',
             city:'',
             postalCode:'',
+            
 
 
         }
+       
     }
+
 
     submitForm= (e)=>{
        
         e.preventDefault();
-      
+        
 
         this.setState({
             formRegister:{
@@ -35,6 +38,7 @@ class Registration extends React.Component {
                 streetAddress:'',
                 city:'',
                 postalCode:'',
+            
     
     
             }
@@ -42,20 +46,35 @@ class Registration extends React.Component {
         })
 
     }
+  
     handeInput =  (e)=> {
       
         let formRegister = {...this.state.formRegister}
         let currentId = e.currentTarget.id;
-       
-        formRegister[currentId] = e.currentTarget.value;
+ 
+        formRegister[currentId] = e.currentTarget.value
+      
+        const value = e.target.value.trim();
+        let errMsg = '';
+        console.log(value)
+        
+        switch (currentId) {
+            case 'name':
+              errMsg = value.length < 6 ? 'name must be 6 char or more' : "" ;
+              break;
+              case 'surname':
+              errMsg = value.length < 6 ? 'surname must be 6 char or more' : '';
+             break;
+        }
         this.setState({formRegister})
-        // this.state.myarray.map((user)=>{
-        //     if(user>0){
-        //         this.state.submitstate=true;
-        //     }else{
-        //         this.state.submitstate=false;
-        //     }
-        //     })
+    this.setState({
+        
+       
+        errorMessage: errMsg
+      })
+
+        console.log(this.state.errorMessage)
+       
         
     }
 
@@ -166,6 +185,7 @@ class Registration extends React.Component {
 					Submit
 				</Button>
 			</Form>
+            <h3 className="text-white">{this.state.errorMessage}</h3>
             </Container>
 		);
 	}
